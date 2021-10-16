@@ -10,4 +10,4 @@ TicTacToe game:
 -   Display a play again button to start again.
 -   A tie is possible.
 
-Website - [here](ticks-and-tacks.netlify.app)
+Website - [here](https://ticks-and-tacks.netlify.app/)
