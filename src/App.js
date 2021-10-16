@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
-import Board from "./Board";
+import Board from "./components/Board";
 import { calculateWinner } from "./helper";
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
     const [nameX, setNameX] = useState("");
     const [name0, setName0] = useState("");
 
-    const [seconds, setSeconds] = useState(10);
+    const [seconds, setSeconds] = useState(30);
 
     const xO = xIsNext ? `X` : `0`;
     const names = xIsNext ? `${nameX}` : `${name0}`;
@@ -44,8 +44,7 @@ const App = () => {
         setHistory([...historyPoint, squares]);
         setStepNumber(historyPoint.length);
         setXisNext(!xIsNext);
-        setSeconds(10);
-        console.log(stepNumber, "stepnumber");
+        setSeconds(30);
     };
 
     const jumpTo = (step) => {
@@ -75,12 +74,12 @@ const App = () => {
                 setSeconds(seconds - 1);
             }
             if (seconds === 0) {
-                setSeconds(10);
+                setSeconds(30);
                 setXisNext(!xIsNext);
             }
         }, 1000);
         return () => clearTimeout(timer);
-    }, [xIsNext, boardStyle, seconds, startGame]);
+    }, [xIsNext, seconds, startGame]);
 
     return (
         <div>
